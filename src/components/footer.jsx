@@ -59,7 +59,7 @@ export function Footer() {
                         <div>
                             <h4 className="font-bold text-sm mb-3 text-white">Connect</h4>
                             <ul className="space-y-2 text-xs">
-                                <li><a href="https://github.com/sudheerbhuvana/indevs.in.git" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">GitHub</a></li>
+                                <li><a href="https://github.com/sudheerbhuvana/indevs.in" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">GitHub</a></li>
                                 <li><a href="https://github.com/sponsors/sudheerbhuvana" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Sponsor ❤️</a></li>
                                 <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Twitter</a></li>
                                 <li><a href="mailto:hello@indevs.in" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Contact</a></li>

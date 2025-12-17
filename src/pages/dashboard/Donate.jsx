@@ -36,7 +36,7 @@ export default function Donate() {
                     Can't sponsor financially? No problem! You can still help by:
                 </p>
                 <ul className="text-left max-w-md mx-auto space-y-2 text-[#4A4A4A]">
-                    <li>⭐ Star our <a href="https://github.com/sudheerbhuvana/indevs.in.git" className="font-bold text-[#1A1A1A] hover:text-[#FF6B35]" target="_blank" rel="noreferrer">GitHub repository</a></li>
+                    <li>⭐ Star our <a href="https://github.com/sudheerbhuvana/indevs.in" className="font-bold text-[#1A1A1A] hover:text-[#FF6B35]" target="_blank" rel="noreferrer">GitHub repository</a></li>
                     <li>🐛 Report bugs and suggest features</li>
                     <li>📝 Contribute to documentation</li>
                     <li>💬 Spread the word about Indevs</li>

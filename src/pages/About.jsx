@@ -181,7 +181,7 @@ export function About() {
                         Transparency is our core. Indevs.in is 100% open source. You can view our code, contribute to the project, or audit our security directly on GitHub.
                     </p>
                     <a
-                        href="https://github.com/sudheerbhuvana/indevs.in.git"
+                        href="https://github.com/sudheerbhuvana/indevs.in"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-[4px_4px_0px_0px_#FFD23F] transition-all"

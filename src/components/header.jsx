@@ -34,7 +34,7 @@ export function Header() {
               Docs
             </a>
             <a
-              href="https://github.com/sudheerbhuvana/indevs.in.git"
+              href="https://github.com/sudheerbhuvana/indevs.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#1A1A1A] hover:text-[#FF6B35] transition-colors duration-150 font-medium text-sm lg:text-base"
