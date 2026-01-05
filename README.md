@@ -56,7 +56,7 @@ For formal tracking, please use GitHub Issues for:
 
 We take abuse seriously to keep the platform safe.
 
-📧 **Email:** reportabuse@admin.indevs.in
+📧 **Email:** reportabuse@stackryze.com
 
 ---
 

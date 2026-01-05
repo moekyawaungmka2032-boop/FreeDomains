@@ -47,11 +47,11 @@ export default function Settings() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-[#888]" />
-                            <span className="font-mono text-[#1A1A1A] font-bold">support@admin.indevs.in</span>
+                            <span className="font-mono text-[#1A1A1A] font-bold">support@stackryze.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-[#888]" />
-                            <span className="font-mono text-[#1A1A1A] font-bold">reportabuse@admin.indevs.in</span>
+                            <span className="font-mono text-[#1A1A1A] font-bold">reportabuse@stackryze.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-[#888]" />
@@ -59,11 +59,11 @@ export default function Settings() {
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-[#888]" />
-                            <span className="font-mono text-[#1A1A1A] font-bold">security@admin.indevs.in</span>
+                            <span className="font-mono text-[#1A1A1A] font-bold">security@stackryze.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-[#888]" />
-                            <span className="font-mono text-[#1A1A1A] font-bold">no-reply@admin.indevs.in</span>
+                            <span className="font-mono text-[#1A1A1A] font-bold">no-reply@stackryze.com</span>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ export default function Settings() {
                     <div>
                         <p className="font-bold text-sm mb-1">Safety Warning</p>
                         <p className="text-sm leading-relaxed opacity-90">
-                            We will <strong>NEVER</strong> contact you from any other domain or prefix. If you receive emails claiming to be from us from a @gmail.com or other address, please report it immediately to reportabuse@admin.indevs.in.
+                            We will <strong>NEVER</strong> contact you from any other domain or prefix. If you receive emails claiming to be from us from a @gmail.com or other address, please report it immediately to reportabuse@stackryze.com.
                         </p>
                     </div>
                 </div>

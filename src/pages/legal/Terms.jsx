@@ -98,9 +98,9 @@ export function Terms() {
 
             <h3>9. Contact</h3>
             <ul className="list-none pl-0 space-y-2">
-                <li> Support: <a href="mailto:support@admin.indevs.in" className="text-[#FF6B35] hover:underline">support@admin.indevs.in</a></li>
-                <li> Abuse Reports: <a href="mailto:reportabuse@admin.indevs.in" className="text-[#FF6B35] hover:underline">reportabuse@admin.indevs.in</a></li>
-                <li> Legal Inquiries: <a href="mailto:legal@admin.indevs.in" className="text-[#FF6B35] hover:underline">legal@admin.indevs.in</a></li>
+                <li> Support: <a href="mailto:support@stackryze.com" className="text-[#FF6B35] hover:underline">support@stackryze.com</a></li>
+                <li> Abuse Reports: <a href="mailto:reportabuse@stackryze.com" className="text-[#FF6B35] hover:underline">reportabuse@stackryze.com</a></li>
+                <li> Legal Inquiries: <a href="mailto:legal@stackryze.com" className="text-[#FF6B35] hover:underline">legal@stackryze.com</a></li>
             </ul>
             <p>
                 We aim to respond within 5–7 business days, subject to volunteer availability.
