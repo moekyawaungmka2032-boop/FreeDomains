@@ -13,13 +13,20 @@ export function Header() {
 
         {/* Left Side: Logo */}
         <div className="flex items-center">
-          <a href="/" className="flex items-baseline gap-0.5 group">
-            <div className="flex items-center font-extrabold text-4xl tracking-tighter gap-0.5 [-webkit-text-stroke:1px_#1A1A1A]">
-              <span className="text-[#FF6B35]">IN</span>
-              <span className="text-white">DE</span>
-              <span className="text-[#138808]">VS</span>
+          <a href="/" className="flex items-center gap-4 group">
+            <div className="flex items-center gap-3">
+              <img src="/stackryze_logo1.png" alt="Stackryze Logo" className="h-12 w-auto" />
+              <span className="text-2xl font-bold text-[#1A1A1A] tracking-tight">Stackryze Domains</span>
             </div>
-            <span className="text-xl font-bold text-[#1A1A1A] tracking-tight">.in</span>
+            <div className="h-8 w-[1px] bg-[#E5E3DF]"></div>
+            <div className="flex items-baseline gap-0.5">
+              <div className="flex items-center font-extrabold text-3xl tracking-tighter gap-0.5 [-webkit-text-stroke:1px_#1A1A1A]">
+                <span className="text-[#FF6B35]">IN</span>
+                <span className="text-white">DE</span>
+                <span className="text-[#138808]">VS</span>
+              </div>
+              <span className="text-xl font-bold text-[#1A1A1A] tracking-tight">.in</span>
+            </div>
           </a>
         </div>
 

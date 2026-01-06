@@ -99,7 +99,9 @@ export function HeroSection() {
           {/* Left: Text */}
           <div className="space-y-8">
             <p className="text-base font-bold uppercase tracking-widest text-[#FF6B35]">
-              Free Subdomains for Developers
+              Free Domains for Developers
+
+
             </p>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-white tracking-tight">

@@ -16,7 +16,9 @@ export function Footer() {
                             <span className="text-lg font-bold text-white tracking-tight">.in</span>
                         </a>
                         <p className="text-[#E5E3DF] text-sm mb-4 max-w-sm">
-                            Free subdomains for developers.<br />
+                            Free Domains for Developers
+
+                            .<br />
                             Built by developers.
                         </p>
 
