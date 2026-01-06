@@ -41,7 +41,7 @@ export function Abuse() {
                     When reporting, please include:
                 </p>
                 <ul className="text-red-800 text-sm list-disc pl-6 mt-2">
-                    <li>Full subdomain URL (e.g., example.stackryze.in)</li>
+                    <li>Full subdomain URL (e.g., example.stackryze.com)</li>
                     <li>Description of the violation or harmful content</li>
                     <li>Evidence (screenshots, logs, or relevant links)</li>
                     <li>Your contact information for follow-up</li>

@@ -30,12 +30,12 @@ export function Footer() {
                         </p>
 
                         <div className="space-y-0.5 mb-2">
-                            <h5 className="text-[#FF6B35] font-bold text-xs uppercase tracking-wide mb-1">Verified Emails</h5>
-                            <p className="text-[#E5E3DF] text-xs font-mono">support@stackryze.com</p>
-                            <p className="text-[#E5E3DF] text-xs font-mono">reportabuse@stackryze.com</p>
-                            <p className="text-[#E5E3DF] text-xs font-mono">sudheer@stackryze.com <span className="text-[#6B6B6B]">(Founder)</span></p>
-                            <p className="text-[#E5E3DF] text-xs font-mono">no-reply@stackryze.com</p>
-                            <p className="text-[#6B6B6B] text-[10px] max-w-sm mt-2 italic leading-relaxed">
+                            <h5 className="text-[#FF6B35] font-bold text-sm uppercase tracking-wide mb-1">Verified Emails</h5>
+                            <p className="text-[#E5E3DF] text-sm font-mono">support@stackryze.com</p>
+                            <p className="text-[#E5E3DF] text-sm font-mono">reportabuse@stackryze.com</p>
+                            <p className="text-[#E5E3DF] text-sm font-mono">sudheer@stackryze.com <span className="text-[#6B6B6B]">(Founder)</span></p>
+                            <p className="text-[#E5E3DF] text-sm font-mono">no-reply@stackryze.com</p>
+                            <p className="text-[#6B6B6B] text-xs max-w-sm mt-2 italic leading-relaxed">
                                 Note: We don't send any messages from any other domains or prefixes whatsoever.
                             </p>
                         </div>
@@ -45,8 +45,8 @@ export function Footer() {
                     <div className="flex gap-10 md:gap-20 pr-2 md:pr-0">
                         {/* Platform */}
                         <div>
-                            <h4 className="font-bold text-sm mb-3 text-white">Platform</h4>
-                            <ul className="space-y-2 text-xs">
+                            <h4 className="font-bold text-base mb-3 text-white">Platform</h4>
+                            <ul className="space-y-2 text-sm">
                                 <li><a href="/docs" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Documentation</a></li>
 
                                 <li><a href="/about" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">About</a></li>
@@ -55,8 +55,8 @@ export function Footer() {
 
                         {/* Legal */}
                         <div>
-                            <h4 className="font-bold text-sm mb-3 text-white">Legal</h4>
-                            <ul className="space-y-2 text-xs">
+                            <h4 className="font-bold text-base mb-3 text-white">Legal</h4>
+                            <ul className="space-y-2 text-sm">
                                 <li><a href="/terms" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Terms</a></li>
                                 <li><a href="/privacy" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Privacy</a></li>
                                 <li><a href="/aup" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Usage Policy</a></li>
@@ -66,8 +66,8 @@ export function Footer() {
 
                         {/* Connect */}
                         <div>
-                            <h4 className="font-bold text-sm mb-3 text-white">Connect</h4>
-                            <ul className="space-y-2 text-xs">
+                            <h4 className="font-bold text-base mb-3 text-white">Connect</h4>
+                            <ul className="space-y-2 text-sm">
                                 <li><a href="https://github.com/sudheerbhuvana/indevs.in" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">GitHub</a></li>
                                 <li><a href="https://github.com/sponsors/sudheerbhuvana" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Sponsor ❤️</a></li>
                                 <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-[#E5E3DF] hover:text-[#FF6B35] transition-colors">Twitter</a></li>
@@ -79,11 +79,11 @@ export function Footer() {
 
                 {/* Bottom */}
                 <div className="pt-4 border-t border-[#333] flex flex-col md:flex-row justify-between items-center gap-2">
-                    <p className="text-[10px] text-[#E5E3DF] text-center md:text-left">
+                    <p className="text-xs text-[#E5E3DF] text-center md:text-left">
                         © 2025 Indevs. Open source and proud of it.
                     </p>
-                    <p className="text-[10px] text-[#E5E3DF] text-center md:text-right">
-                        A project by <a href="https://stackryze.com" target="_blank" rel="noreferrer" className="font-bold text-white hover:text-[#FF6B35] transition-colors">Stackryze</a>
+                    <p className="text-xs text-[#E5E3DF] text-center md:text-right">
+                        A project by <a href="https://stackryze.com" target="_blank" rel="noreferrer" className="font-bold text-white hover:text-[#FF6B35] transition-colors">Stackryze</a> (Registered MSME, India)
                     </p>
                 </div>
 
