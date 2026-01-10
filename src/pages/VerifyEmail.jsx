@@ -62,10 +62,21 @@ export default function VerifyEmail() {
             }, 500);
 
         } catch (err) {
+            const errorMessage = err.response?.data?.error || err.message || "Invalid code.";
+
+            if (errorMessage.includes('expired')) {
+                toast({
+                    variant: "destructive",
+                    title: "Code Expired",
+                    description: "This code has expired. Please request a new one below.",
+                });
+                return;
+            }
+
             toast({
                 variant: "destructive",
                 title: "Verification Failed",
-                description: err.response?.data?.error || "Invalid code.",
+                description: errorMessage,
             });
         } finally {
             setIsLoading(false);
