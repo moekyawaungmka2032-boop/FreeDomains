@@ -68,6 +68,7 @@ export default function Login() {
                 variant: "destructive",
                 title,
                 description,
+                duration: 6000, // Show for 6 seconds
             });
         }
     }, [error, toast, searchParams]);

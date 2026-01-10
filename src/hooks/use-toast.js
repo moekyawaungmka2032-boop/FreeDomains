@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 const TOAST_LIMIT = 1;
-const TOAST_REMOVE_DELAY = 1e6;
+const TOAST_REMOVE_DELAY = 5000; // 5 seconds (was 1e6 = 1000 seconds!)
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
   UPDATE_TOAST: "UPDATE_TOAST",
