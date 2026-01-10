@@ -10,6 +10,7 @@ export default function VerifyEmail() {
     const email = searchParams.get("email");
     const [otp, setOtp] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isResending, setIsResending] = useState(false);
     const { toast } = useToast();
     const navigate = useNavigate();
 
@@ -53,6 +54,25 @@ export default function VerifyEmail() {
         }
     };
 
+    const handleResend = async () => {
+        setIsResending(true);
+        try {
+            await subdomainAPI.post('/auth/email/resend-verification', { email });
+            toast({
+                title: "Code Resent",
+                description: "Check your inbox for a new verification code.",
+            });
+        } catch (err) {
+            toast({
+                variant: "destructive",
+                title: "Failed to Resend",
+                description: err.response?.data?.error || "Please try again later.",
+            });
+        } finally {
+            setIsResending(false);
+        }
+    };
+
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-[#FFF8F0] px-4 font-sans">
             <Link to="/" className="mb-8 flex items-center gap-3 group">
@@ -90,8 +110,15 @@ export default function VerifyEmail() {
                     </button>
                 </form>
 
-                <div className="mt-6">
+                <div className="mt-6 space-y-2">
                     <p className="text-xs text-gray-500">Code expires in 10 minutes.</p>
+                    <button
+                        onClick={handleResend}
+                        disabled={isResending}
+                        className="text-sm text-gray-600 hover:text-black hover:underline disabled:opacity-50"
+                    >
+                        {isResending ? "Sending..." : "Didn't receive code? Resend"}
+                    </button>
                 </div>
             </div>
         </div>
