@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import VerifyEmail from './pages/VerifyEmail';
 import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import SetPassword from './pages/SetPassword';
 // import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
@@ -65,6 +66,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
 
           {/* Protected Routes including Set Password Force Flow */}
           <Route element={<ProtectedRoute />}>

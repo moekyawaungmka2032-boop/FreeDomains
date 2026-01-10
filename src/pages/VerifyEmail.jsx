@@ -24,17 +24,23 @@ export default function VerifyEmail() {
         setIsLoading(true);
 
         try {
-            await subdomainAPI.post('/auth/email/verify-email', {
+            const response = await subdomainAPI.post('/auth/email/verify-email', {
                 email,
                 otp
             });
 
             toast({
                 title: "Email Verified",
-                description: "You can now login.",
+                description: "Logging you in...",
             });
 
-            navigate('/login');
+            // Use redirect from response or default to dashboard
+            const redirectTo = response.redirect || '/dashboard';
+
+            // Refresh auth context then navigate
+            setTimeout(() => {
+                window.location.href = redirectTo;
+            }, 500);
 
         } catch (err) {
             toast({

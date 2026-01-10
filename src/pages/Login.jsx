@@ -66,14 +66,14 @@ export default function Login() {
 
             console.log('[Login] Showing toast:', { title, description });
 
-            // Temporary: Alert fallback since toast UI isn't rendering
-            alert(`${title}\n\n${description}`);
+            // Set error banner for inline display
+            setErrorBanner({ title, description });
 
             toast({
                 variant: "destructive",
                 title,
                 description,
-                duration: 6000, // Show for 6 seconds
+                duration: 6000,
             });
         }
     }, [error, toast, searchParams]);

@@ -22,7 +22,7 @@ export default function Signup() {
             toast({
                 variant: "destructive",
                 title: "CAPTCHA Required",
-                description: "Please complete the verification check.",
+                description: "Please complete the verification check. If it's not loading, try refreshing the page.",
             });
             return;
         }
@@ -122,6 +122,14 @@ export default function Signup() {
                         <Turnstile
                             siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
                             onSuccess={(token) => setCaptchaToken(token)}
+                            onError={(error) => {
+                                console.error('Turnstile error:', error);
+                                toast({
+                                    variant: "destructive",
+                                    title: "CAPTCHA Error",
+                                    description: "Unable to load verification. Please refresh the page or contact support if this persists.",
+                                });
+                            }}
                             options={{ theme: 'light' }}
                         />
                     </div>
