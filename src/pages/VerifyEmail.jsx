@@ -17,8 +17,26 @@ export default function VerifyEmail() {
     useEffect(() => {
         if (!email) {
             navigate('/login');
+            return;
         }
-    }, [email, navigate]);
+
+        const checkStatus = async () => {
+            try {
+                const res = await subdomainAPI.post('/auth/email/status', { email });
+                if (res.exists && res.isVerified) {
+                    toast({
+                        title: "Already Verified",
+                        description: "This email is already verified. Please login.",
+                    });
+                    navigate('/login');
+                }
+            } catch (err) {
+                console.error('Status check failed:', err);
+            }
+        };
+
+        checkStatus();
+    }, [email, navigate, toast]);
 
     const handleVerify = async (e) => {
         e.preventDefault();

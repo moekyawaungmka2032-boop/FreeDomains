@@ -87,6 +87,15 @@ export default function Login() {
                 window.location.href = '/dashboard';
             }
         } catch (err) {
+            if (err.status === 403 && err.message === 'Please verify your email address first.') {
+                toast({
+                    title: "Verification Required",
+                    description: "Redirecting to verification page...",
+                });
+                window.location.href = `/verify-email?email=${encodeURIComponent(email)}`;
+                return;
+            }
+
             toast({
                 variant: "destructive",
                 title: "Login Failed",
