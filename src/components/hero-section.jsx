@@ -201,7 +201,7 @@ export function HeroSection() {
             <p className="text-xs font-bold uppercase tracking-widest text-[#FF6B35] mb-4">
               Sponsored By
             </p>
-            <div className="flex justify-center items-center gap-8 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <div className="flex justify-center items-center gap-8">
               <img
                 src="/Cloudflare_Logo.svg.png"
                 alt="Cloudflare"
