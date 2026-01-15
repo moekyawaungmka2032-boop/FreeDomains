@@ -150,6 +150,10 @@ export default function VerifyEmail() {
                     </button>
                 </div>
             </div>
+
+            <div className="mt-6 text-center text-sm text-gray-600">
+                Need help? <a href="https://discord.gg/wr7s97cfM7" target="_blank" rel="noopener noreferrer" className="text-black font-medium hover:underline">Join our Discord</a> or email <a href="mailto:support@stackryze.com" className="text-black font-medium hover:underline">support@stackryze.com</a>
+            </div>
         </div>
     );
 }

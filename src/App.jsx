@@ -15,6 +15,7 @@ import VerifyEmail from './pages/VerifyEmail';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import SetPassword from './pages/SetPassword';
+import CompleteProfile from './pages/CompleteProfile';
 import NotFound from './pages/NotFound';
 import DashboardLayout from './layouts/DashboardLayout';
 import Overview from './pages/dashboard/Overview';
@@ -58,7 +59,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-
+        <IncidentAnnouncement />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/docs" element={<Docs />} />
@@ -69,6 +70,7 @@ function App() {
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/complete-profile" element={<CompleteProfile />} />
 
           {/* Protected Routes including Set Password Force Flow */}
           <Route element={<ProtectedRoute />}>

@@ -1,17 +1,21 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { subdomainAPI } from "../lib/api";
 import { useToast } from "../hooks/use-toast";
 import { Loader2, ShieldAlert } from "lucide-react";
 import { useAuth } from "../context/auth-context";
 
 export default function SetPassword() {
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
-    const { toast } = useToast();
+    const { user, checkAuth } = useAuth();
     const navigate = useNavigate();
-    const { checkAuth } = useAuth(); // To refresh user state after setting password
+    const [searchParams] = useSearchParams();
+    const nextPage = searchParams.get('next'); // Get redirect target
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const { toast } = useToast();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,8 +23,8 @@ export default function SetPassword() {
         if (password !== confirmPassword) {
             toast({
                 variant: "destructive",
-                title: "Passwords do not match",
-                description: "Please ensure both password fields match.",
+                title: "Passwords Don't Match",
+                description: "Please make sure both passwords are identical.",
             });
             return;
         }
@@ -28,7 +32,7 @@ export default function SetPassword() {
         if (password.length < 8) {
             toast({
                 variant: "destructive",
-                title: "Weak Password",
+                title: "Password Too Short",
                 description: "Password must be at least 8 characters long.",
             });
             return;
@@ -37,21 +41,26 @@ export default function SetPassword() {
         setIsLoading(true);
 
         try {
-            await subdomainAPI.post('/auth/email/set-password', {
-                password,
-                confirmPassword
-            });
+            await subdomainAPI.post('/auth/email/set-password', { password, confirmPassword });
 
             toast({
-                title: "Account Secured",
-                description: "Your password has been set successfully.",
+                title: "Password Set Successfully",
+                description: nextPage === 'complete-profile'
+                    ? "Redirecting to complete your profile..."
+                    : "You can now login with your new password.",
             });
 
             // Refresh auth state to update 'hasPassword' flag
             await checkAuth();
 
-            // Redirect to dashboard
-            navigate('/dashboard');
+            // Redirect based on 'next' parameter
+            if (nextPage === 'complete-profile') {
+                // Redirect to complete profile with email pre-filled
+                window.location.href = `/complete-profile?email=${encodeURIComponent(user?.email || '')}`;
+            } else {
+                // Default: redirect to dashboard
+                navigate('/dashboard');
+            }
 
         } catch (err) {
             console.error('Set Password Error:', err);
@@ -59,10 +68,10 @@ export default function SetPassword() {
 
             let errorMessage = 'Failed to set password.';
 
-            if (err.status === 401) {
+            if (err.response?.status === 401) {
                 errorMessage = 'Session expired. Please log in again.';
-            } else if (err.data?.error) {
-                errorMessage = err.data.error;
+            } else if (err.response?.data?.error) {
+                errorMessage = err.response.data.error;
             } else if (err.message) {
                 errorMessage = err.message;
             }
@@ -120,6 +129,10 @@ export default function SetPassword() {
                         {isLoading ? <span className="flex items-center justify-center gap-2"><Loader2 className="animate-spin w-4 h-4" /> Saving...</span> : "Set Password & Continue"}
                     </button>
                 </form>
+            </div>
+
+            <div className="mt-6 text-center text-sm text-gray-600">
+                Need help? <a href="https://discord.gg/wr7s97cfM7" target="_blank" rel="noopener noreferrer" className="text-black font-medium hover:underline">Join our Discord</a> or email <a href="mailto:support@stackryze.com" className="text-black font-medium hover:underline">support@stackryze.com</a>
             </div>
         </div>
     );

@@ -88,13 +88,24 @@ export default function Login() {
                 window.location.href = '/dashboard';
             }
         } catch (err) {
-            if (err.status === 403 && err.message === 'Please verify your email address first.') {
-                toast({
-                    title: "Verification Required",
-                    description: "Redirecting to verification page...",
-                });
-                window.location.href = `/verify-email?email=${encodeURIComponent(email)}`;
-                return;
+            if (err.status === 403) {
+                if (err.message === 'Please verify your email address first.') {
+                    toast({
+                        title: "Verification Required",
+                        description: "Redirecting to verification page...",
+                    });
+                    window.location.href = `/verify-email?email=${encodeURIComponent(email)}`;
+                    return;
+                }
+
+                if (err.data && err.data.error === 'profile_incomplete') {
+                    toast({
+                        title: "Profile Completion Required",
+                        description: "Redirecting to complete your profile...",
+                    });
+                    window.location.href = `/complete-profile?email=${encodeURIComponent(email)}`;
+                    return;
+                }
             }
 
             toast({
@@ -244,6 +255,10 @@ export default function Login() {
                         </Link>
                     </p>
                 </div>
+            </div>
+
+            <div className="mt-6 text-center text-sm text-gray-600">
+                Need help? <a href="https://discord.gg/wr7s97cfM7" target="_blank" rel="noopener noreferrer" className="text-black font-medium hover:underline">Join our Discord</a> or email <a href="mailto:support@stackryze.com" className="text-black font-medium hover:underline">support@stackryze.com</a>
             </div>
 
             <p className="mt-8 text-xs text-[#888]">
