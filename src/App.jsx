@@ -41,6 +41,13 @@ const ProtectedRoute = ({ children }) => {
   if (loading) return <div className="flex items-center justify-center min-h-screen bg-[#FFF8F0] font-bold text-xl">Loading...</div>;
   if (!user) return <Navigate to={`/login${search}`} replace />; // Preserve ?error=... params
 
+  // FORCE REDIRECT: Users with noreply emails MUST change their email first
+  // They cannot access any other page until email is updated
+  const isNoreplyEmail = user?.email?.includes('noreply.github.com');
+  if (isNoreplyEmail && location !== '/change-email') {
+    return <Navigate to={`/change-email?email=${encodeURIComponent(user.email)}&required=true`} replace />;
+  }
+
   // SPECIAL: Allow access to /change-email for noreply users regardless of other checks
   // This is critical for the noreply email fix - users need to change their email first
   if (location === '/change-email') {
