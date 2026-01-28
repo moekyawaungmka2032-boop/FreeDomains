@@ -16,6 +16,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import SetPassword from './pages/SetPassword';
 import CompleteProfile from './pages/CompleteProfile';
+import ChangeEmail from './pages/ChangeEmail';
 import NotFound from './pages/NotFound';
 import DashboardLayout from './layouts/DashboardLayout';
 import Overview from './pages/dashboard/Overview';
@@ -75,6 +76,7 @@ function App() {
           {/* Protected Routes including Set Password Force Flow */}
           <Route element={<ProtectedRoute />}>
             <Route path="/set-password" element={<SetPassword />} />
+            <Route path="/change-email" element={<ChangeEmail />} />
           </Route>
 
           <Route element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
