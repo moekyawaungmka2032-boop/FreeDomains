@@ -19,7 +19,19 @@ export default function ChangeEmail() {
             navigate('/login');
             return;
         }
-    }, [currentEmail, navigate]);
+
+        // IMPORTANT: This page is ONLY for noreply email users
+        // Normal users should change their email from Settings page
+        const isNoreplyEmail = currentEmail.includes('noreply.github.com');
+        if (!isNoreplyEmail) {
+            toast({
+                title: "Not Required",
+                description: "Email change from this page is only for GitHub noreply emails. Use Settings to change your email.",
+            });
+            navigate('/dashboard');
+            return;
+        }
+    }, [currentEmail, navigate, toast]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,19 +66,18 @@ export default function ChangeEmail() {
         setIsLoading(true);
 
         try {
-            const response = await subdomainAPI.post('/auth/email/change-email', { newEmail });
+            await subdomainAPI.post('/auth/email/change-email', { newEmail });
 
-            if (response.success) {
-                toast({
-                    title: "Email Updated",
-                    description: "Redirecting to verification...",
-                });
+            // If we got here without error, email change was successful
+            toast({
+                title: "Email Updated",
+                description: "Redirecting to verification...",
+            });
 
-                // Redirect to verification page with the new email
-                setTimeout(() => {
-                    window.location.href = `/verify-email?email=${encodeURIComponent(newEmail)}`;
-                }, 1000);
-            }
+            // Redirect to verification page with the new email
+            setTimeout(() => {
+                window.location.href = `/verify-email?email=${encodeURIComponent(newEmail)}`;
+            }, 1000);
 
         } catch (err) {
             console.error("Email change failed", err);
