@@ -9,18 +9,25 @@ export function SponsorsSection() {
             color: "#F38020"
         },
         {
-            name: "Termius",
-            logo: "/Termius_Logo.png",
-            url: "https://termius.com",
-            description: "Termius provides a secure, reliable, and collaborative SSH client.",
-            color: "#5865F2"
-        },
-        {
             name: "1Password",
             logo: "/1password_Logo.png",
             url: "https://1password.com",
             description: "1Password is the easiest way to store and use strong passwords. Log in to sites and fill forms securely with a single click.",
             color: "#0094F5"
+        },
+        {
+            name: "HetrixTools",
+            logo: "/hetrixtools.png",
+            url: "https://hetrixtools.com",
+            description: "HetrixTools provides Uptime Monitoring, Blacklist Monitoring, and Server Resource Monitoring to help webmasters improve efficiency.",
+            color: "#FF3D3D"
+        },
+        {
+            name: "Termius",
+            logo: "/Termius_Logo.png",
+            url: "https://termius.com",
+            description: "Termius provides a secure, reliable, and collaborative SSH client.",
+            color: "#5865F2"
         }
     ];
 
@@ -36,11 +43,11 @@ export function SponsorsSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {sponsors.map((sponsor, idx) => (
                         <div
                             key={idx}
-                            className="bg-white border-4 border-[#1A1A1A] p-8 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 flex flex-col items-center text-center h-full"
+                            className="bg-white border-4 border-[#1A1A1A] p-6 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 flex flex-col items-center text-center h-full"
                             style={{
                                 boxShadow: `8px 8px 0px 0px ${sponsor.color}`
                             }}
@@ -54,11 +61,11 @@ export function SponsorsSection() {
                                 <img
                                     src={sponsor.logo}
                                     alt={sponsor.name}
-                                    className="h-full w-auto object-contain max-w-[180px]"
+                                    className="h-full w-auto object-contain max-w-[140px]"
                                 />
                             </a>
 
-                            <p className="text-sm md:text-base text-[#1A1A1A]/80 leading-relaxed font-medium">
+                            <p className="text-sm text-[#1A1A1A]/80 leading-relaxed font-medium">
                                 <a
                                     href={sponsor.url}
                                     target="_blank"
